@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: alfadigest/a-set-digest  # ⚠️ ЗАМЕНИ ТВОЙ_НИКНЕЙМ на свой логин GitHub!
+  name: git-gateway
   branch: main
 
 media_folder: "assets/uploads"
