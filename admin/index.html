@@ -1,11 +1,1183 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Админка | А-СЕТЬ</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</head>
-<body>
-</body>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Еженедельный дайджест новостей А‑СЕТЬ: конкурсы, события, достижения."
+    />
+ <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <title>Дайджест | А‑СЕТЬ</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        ((k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a));
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js?id=109596106",
+        "ym",
+      );
+
+      ym(109596106, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/109596106"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: #f5f5f7;
+        padding: 1rem;
+        color: #333;
+      }
+      .container {
+        max-width: 560px;
+        margin: 0 auto;
+        position: relative;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+        color: #ff5a5f;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 4px;
+      }
+
+      /* Неоморфные кнопки */
+      .neo-btn {
+        all: unset;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+        border-radius: 999vw;
+        background-color: rgba(0, 0, 0, 0.75);
+        box-shadow:
+          -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+          0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .neo-btn:focus-visible {
+        outline: 3px solid #ff5a5f;
+        outline-offset: 4px;
+      }
+      .neo-btn::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: calc(100% + 0.3em);
+        height: calc(100% + 0.3em);
+        top: -0.15em;
+        left: -0.15em;
+        border-radius: inherit;
+        background: linear-gradient(
+          -135deg,
+          rgba(5, 5, 5, 0.5),
+          transparent 20%,
+          transparent 100%
+        );
+        filter: blur(0.0125em);
+        opacity: 0.25;
+        mix-blend-mode: multiply;
+      }
+      .neo-btn .button-outer {
+        position: relative;
+        z-index: 1;
+        border-radius: inherit;
+        transition: box-shadow 300ms ease;
+        box-shadow:
+          0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
+          0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+          0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+      }
+      .neo-btn:hover .button-outer {
+        box-shadow:
+          0 0 0 0 rgba(5, 5, 5, 1),
+          0 0 0 0 rgba(5, 5, 5, 0.5),
+          0 0 0 0 rgba(5, 5, 5, 0.25);
+      }
+      .neo-btn .button-inner {
+        position: relative;
+        z-index: 1;
+        border-radius: inherit;
+        padding: 0.7em 1.2em;
+        background-image: linear-gradient(
+          135deg,
+          rgba(230, 230, 230, 1),
+          rgba(180, 180, 180, 1)
+        );
+        transition:
+          box-shadow 300ms ease,
+          clip-path 250ms ease,
+          transform 250ms ease;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0 round 999vw);
+        box-shadow:
+          0 0 0 0 inset rgba(5, 5, 5, 0.1),
+          -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
+          0 0 0 0 inset rgba(5, 5, 5, 0.1),
+          0 0 0.05em 0.2em inset rgba(255, 255, 255, 0.25),
+          0.025em 0.05em 0.1em 0 inset rgba(255, 255, 255, 1),
+          0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+          -0.075em -0.25em 0.25em 0.1em inset rgba(5, 5, 5, 0.25);
+      }
+      .neo-btn:hover .button-inner {
+        clip-path: inset(
+          clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px)
+            clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 999vw
+        );
+        box-shadow:
+          0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75),
+          -0.025em -0.03em 0.05em 0.025em inset rgba(5, 5, 5, 0.5),
+          0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5),
+          0 0 0.05em 0.5em inset rgba(255, 255, 255, 0.15),
+          0 0 0 0 inset rgba(255, 255, 255, 1),
+          0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+          -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25);
+      }
+      .neo-btn .button-inner span {
+        position: relative;
+        z-index: 4;
+        font-family: system-ui, sans-serif;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(
+          135deg,
+          rgba(25, 25, 25, 1),
+          rgba(75, 75, 75, 1)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        transition: transform 250ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1rem;
+      }
+      .neo-btn:hover .button-inner span {
+        transform: scale(0.975);
+      }
+      .neo-btn:active .button-inner {
+        transform: scale(0.975);
+      }
+      .neo-btn-lg .button-inner {
+        padding: 0.85em 1.8em;
+      }
+      .neo-btn-lg .button-inner span {
+        font-size: 1.1rem;
+      }
+
+      .show-all-btn {
+        text-align: center;
+        margin: 24px 0 20px;
+      }
+
+      /* Карточки */
+      .card {
+        background: #fff;
+        border-radius: 24px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .collage-grid {
+        display: grid;
+        gap: 4px;
+        padding: 4px;
+        background: #f8f8fa;
+      }
+      .collage-item {
+        cursor: pointer;
+        background: #e9e9ef;
+        min-height: 120px;
+        overflow: hidden;
+        position: relative;
+      }
+      .collage-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        display: block;
+      }
+      .collage-item:hover img {
+        transform: scale(1.05);
+      }
+      .collage-grid[data-count="1"] {
+        grid-template-columns: 1fr;
+      }
+      .collage-grid[data-count="2"] {
+        grid-template-columns: 1fr 1fr;
+      }
+      .collage-grid[data-count="3"] {
+        grid-template-columns: 1fr 0.7fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "big right-top" "big right-bottom";
+      }
+      .collage-grid[data-count="3"] .collage-item:nth-child(1) {
+        grid-area: big;
+      }
+      .collage-grid[data-count="3"] .collage-item:nth-child(2) {
+        grid-area: right-top;
+      }
+      .collage-grid[data-count="3"] .collage-item:nth-child(3) {
+        grid-area: right-bottom;
+      }
+      .collage-grid[data-count="4"] {
+        grid-template-columns: 1fr 1fr;
+      }
+      .collage-grid[data-count="4"] .collage-item:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .card-content {
+        padding: 1.4rem;
+      }
+      .date {
+        color: #ff5a5f;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+      .card-content h2 {
+        font-size: 1.3rem;
+        margin: 0.25rem 0 0.75rem;
+        line-height: 1.3;
+      }
+      .card-content p {
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 0.5rem;
+      }
+      .card-content p:last-child {
+        margin-bottom: 0;
+      }
+      .photo-count-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(6px);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 40px;
+        font-size: 0.75rem;
+        margin: 10px 0 0 12px;
+      }
+
+      /* Заголовки недель */
+      .week-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 16px;
+        background: white;
+        border-radius: 24px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: background 0.2s;
+        user-select: none;
+      }
+      .week-header:focus-visible {
+        outline: 3px solid #ff5a5f;
+        outline-offset: 2px;
+      }
+      .week-header:hover {
+        background: #fafafa;
+      }
+      .week-header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .week-badge {
+        background: #ff5a5f;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      .week-badge.archived {
+        background: #aaa;
+      }
+      .week-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .week-date {
+        color: #888;
+        font-size: 0.85rem;
+      }
+      .toggle-icon {
+        color: #ff5a5f;
+        transition: transform 0.3s ease;
+      }
+      .week-header.collapsed .toggle-icon {
+        transform: rotate(-90deg);
+      }
+      .week-content.collapsed {
+        display: none;
+      }
+      .week-section.archive-section {
+        display: none;
+      }
+      .week-section.archive-section.visible {
+        display: block;
+      }
+
+      /* Lightbox */
+      .lightbox-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.94);
+        z-index: 3000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .lightbox-modal.active {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox-img {
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: opacity 0.2s ease;
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        transition: background 0.2s;
+        z-index: 10;
+      }
+      .lightbox-close:hover,
+      .lightbox-close:focus-visible {
+        background: rgba(255, 255, 255, 0.3);
+        outline: 2px solid white;
+      }
+
+      /* Кнопки навигации по фото */
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.12);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        transition: background 0.2s, transform 0.2s;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+      }
+      .lightbox-nav:hover,
+      .lightbox-nav:focus-visible {
+        background: rgba(255, 255, 255, 0.3);
+        outline: 2px solid white;
+      }
+      .lightbox-nav:active {
+        transform: translateY(-50%) scale(0.92);
+      }
+      .lightbox-nav.prev {
+        left: 16px;
+      }
+      .lightbox-nav.next {
+        right: 16px;
+      }
+      .lightbox-nav:disabled {
+        opacity: 0.25;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      /* Счётчик фото */
+      .lightbox-counter {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 0.95rem;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(6px);
+        padding: 6px 16px;
+        border-radius: 20px;
+        z-index: 10;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      /* Скрываем навигацию, если фото всего одно */
+      .lightbox-modal.single .lightbox-nav {
+        display: none;
+      }
+      .lightbox-modal.single .lightbox-counter {
+        display: none;
+      }
+
+      @media (max-width: 480px) {
+        .card-content {
+          padding: 1rem;
+        }
+        .card-content h2 {
+          font-size: 1.15rem;
+        }
+        .lightbox-nav {
+          width: 42px;
+          height: 42px;
+          font-size: 1.4rem;
+        }
+        .lightbox-nav.prev {
+          left: 8px;
+        }
+        .lightbox-nav.next {
+          right: 8px;
+        }
+      }
+
+      .square-list {
+        list-style-type: square;
+        padding-left: 1.5em;
+      }
+      .square-list li {
+        margin-bottom: 0.3em;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 2rem 0 1rem;
+        border-top: 1px solid #ddd;
+        color: #888;
+        font-size: 0.85rem;
+        margin-top: 2rem;
+      }
+      .archives-title {
+        text-align: center;
+        margin: 20px 0 10px;
+        padding: 10px;
+        border-top: 1px dashed #ccc;
+        color: #888;
+        display: none;
+      }
+      .archives-title.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>ДАЙДЖЕСТ А‑СЕТЬ</h1>
+        <p class="subtitle">Еженедельный выпуск региональных новостей</p>
+      </header>
+      <main id="mainContent"></main>
+      <div class="show-all-btn" id="showAllBtnWrapper" style="display: none">
+        <button
+          class="neo-btn neo-btn-lg"
+          id="expandAllBtn"
+          aria-expanded="false"
+          aria-controls="archivesSection"
+        >
+          <div class="button-outer">
+            <div class="button-inner">
+              <span
+                ><i class="fas fa-archive" aria-hidden="true"></i> Все
+                выпуски</span
+              >
+            </div>
+          </div>
+        </button>
+      </div>
+      <footer class="footer">
+        <p>© 2026 А‑СЕТЬ | Еженедельные выпуски каждую пятницу</p>
+      </footer>
+    </div>
+
+    <!-- Лайтбокс с навигацией -->
+    <div
+      id="lightboxModal"
+      class="lightbox-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Просмотр изображения"
+    >
+      <button
+        class="lightbox-close"
+        id="closeLightbox"
+        aria-label="Закрыть просмотр"
+      >
+        ×
+      </button>
+      <button
+        class="lightbox-nav prev"
+        id="lightboxPrev"
+        aria-label="Предыдущее фото"
+      >
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <img id="lightboxImage" class="lightbox-img" alt="Увеличенное фото" />
+      <button
+        class="lightbox-nav next"
+        id="lightboxNext"
+        aria-label="Следующее фото"
+      >
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <script>
+          // ============================================================
+          // 📰 ДАННЫЕ НОВОСТЕЙ (редактируйте здесь!)
+          // ============================================================
+          const articlesData = [
+            {
+              "id": 30,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "В Хабаровске прошёл незабываемый вечер в рамках «Альфа‑Тур»🤩",
+              "text": "<p><b>Евгений Монин, старший вице‑президент, руководитель департамента продаж и развития среднего бизнеса</b>, открыл вечер и поздравил всех присутствующих с Днём предпринимателя, подчеркнув их важную роль в развитии бизнеса и инноваций, а также выразив благодарность за доверие к Альфа‑Банку.</p><p>Более 65 клиентов Альфа‑Банка провели вечер в компании единомышленников, обсудив новые идеи и укрепив партнёрские связи.</p>",
+              "images": ["img/w3/mon.png","img/w3/mon1.png","img/w3/mon2.png"]
+            },
+            {
+              "id": 29,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "Альфа‑Банк активно поддержал День российского предпринимательства в Марий Эл📊",
+              "text": "<p>Приняли участие в трёх мероприятиях:</p><ul class=\"square-list\"><li><b>Форум для самозанятых и ИП</b></li><li><b>Торжество во Дворце молодёжи</b> – продуктивная встреча с представителями власти, партнёрами в сфере GR и предпринимателями, где обсуждались актуальные вопросы развития бизнеса в регионе.</li><li><b>Семинар по имиджу и финансовой грамотности</b> (совместно с Союзом женщин России) – участники разбирали деловой этикет, способы защиты от мошенничества и специальные банковские продукты, ориентированные на предпринимателей.</li></ul>",
+              "images": ["img/w3/dpm.png","img/w3/dpm1.png","img/w3/dpm2.png"]
+            },
+            {
+              "id": 28,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "День предпринимателя в Березняках💼",
+              "text": "<p>В центре семейного отдыха «Кама‑парк» на заливах прошёл живой и тёплый выездной спортивный форум «Бизнес‑expedition», приуроченный к Дню российского предпринимателя.</p><p>Более 70 участников увидели насыщенную программу: угощения, зоны развлечений и конкурсов с призами, скалодром, настольный теннис, сапы и каяки — каждый мог выбрать активность по настроению или спокойно пообщаться в кругу коллег.</p>",
+              "images": ["img/w3/dp.png","img/w3/dp1.png","img/w3/dp2.png"]
+            },
+            {
+              "id": 27,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "День защиты детей в Чите🌺",
+              "text": "<p>Главная площадь города превратилась в настоящий центр притяжения для самых юных жителей, и мы гордимся тем, что стали частью этого яркого события.</p><p>Весёлые конкурсы и игры: смех и азарт не умолкали ни на минуту. Дети с удовольствием участвовали в эстафетах и викторинах.</p>",
+              "images": ["img/w3/dzc.png","img/w3/dzc1.png","img/w3/dzc2.png"]
+            },
+            {
+              "id": 26,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "День защиты детей в Иркутске🌺",
+              "text": "<p>Мы стали частью большого городского праздника, разместили яркие интерактивные площадки в городах Иркутской области для детей и их родителей.</p><p>На протяжении всего дня гости наслаждались праздничной атмосферой, участвовали в активностях и угощались сладкой ватой.</p>",
+              "images": ["img/w3/dzi.png","img/w3/dzi1.png","img/w3/dzi2.png"]
+            },
+            {
+              "id": 25,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "День защиты детей в Вологде😍",
+              "text": "<p>Мы приняли участие в главном городском празднике.</p><p>Пока наши юные гости веселились и получали поздравления от «ходячего Дзыня», мы уделили внимание их родителям. Ведь финансовое благополучие семьи — это залог счастливого детства.</p>",
+              "images": ["img/w3/dzv.png","img/w3/dzv1.png","img/w3/dzv2.png"]
+            },
+            {
+              "id": 24,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "День защиты детей в Республике Марий Эл😍",
+              "text": "<p>Во всех городах, где присутствуют офисы легкой сети приняли участие в праздновании Дня защиты детей, раскрасив площадки для активностей в красный цвет.</p><p>Альфа‑Банк добавил к праздничным концертам яркие краски, детскую радость, смех и веселье!</p><p>Дети, их родители и даже бабушки с дедушками с удовольствием участвовали в наших конкурсах, мастер‑классах и викторинах.</p>",
+              "images": ["img/w3/dz.png","img/w3/dz1.png","img/w3/dz2.png"]
+            },
+            {
+              "id": 23,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "В Нижнем Новгороде прошла встреча со студентами ИТ‑кампуса «Неймарк»👩🎓",
+              "text": "<p><b>Виктор Карпушин, руководитель цифрового продукта в Альфа API</b>, рассказал студентам о прагматичных инновациях — как Альфа‑Банк строит цифровые продукты, которые реально работают.</p>",
+              "images": ["img/w3/nn.png"]
+            },
+            {
+              "id": 22,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "Форум «Мой бизнес‑2026: выбирай своё — сделано в Томской области»📊",
+              "text": "<p>На площадке форума обсуждалось развитие бизнеса и продвижение томских брендов. Предприниматели из разных сфер делились опытом развития своих проектов, рассказывали о продвижении брендов и о возможностях роста бизнеса в регионе и за его пределами. Альфа‑Банк представил возможности, которые открывает Фонд «Немалого бизнеса».</p>",
+              "images": ["img/w3/mb.png","img/w3/mb1.png","img/w3/mb2.png"]
+            },
+            {
+              "id": 21,
+              "weekGroup": "week3",
+              "date": "05 июня 2026",
+              "title": "В Хабаровске с ярким настроением отметили День города🔥",
+              "text": "<p>Праздничная программа прошла возле центрального отделения Альфа‑Банка и собрала жителей, которые с удовольствием присоединились к мероприятиям.</p><p>Для гостей подготовили интерактивные игры, в которых могли участвовать и взрослые, и дети.</p><p>🎯Особое настроение создавали приятные сюрпризы: всем желающим раздавали сладкую вату, а установленная фотобудка позволяла каждому забрать с собой памятные снимки этого дня.</p>",
+              "images": ["img/w3/dg.png","img/w3/dg1.png","img/w3/dg2.png"]
+            },
+            {
+              "id": 20,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "17‑я церемония премии «Серебряный Меркурий» в области предпринимательства🤩",
+              "text": "<p>Мероприятие прошло в Вологде и было приурочено ко Дню российского предпринимательства. Премия — одна из самых престижных российских наград в сфере маркетинга и рекламы, оценивающая проекты, принёсшие реальные бизнес‑результаты.</p><p>На одной площадке собрались представители бизнеса, органов власти и институтов поддержки. Приветственное слово произнёс Андрей Свитолин, региональный управляющий. Церемония завершилась награждением лучших предпринимателей от Альфа‑Банка.</p>",
+              "images": ["img/w2/dv.png","img/w2/dv1.png"]
+            },
+            {
+              "id": 19,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Международный форум креативных индустрий «Создано на Дальнем Востоке: от контента к капиталу»",
+              "text": "<p>В Улан‑Удэ мероприятие собралo более 4000 участников из 40 регионов России и 10 стран. В рамках форума прошло более 200 мероприятий, а главным итогом стало подписание соглашений по инфраструктурным, туристическим и креативным проектам.</p>",
+              "images": ["img/w2/dv.png","img/w2/dv1.png"]
+            },
+            {
+              "id": 18,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Поздравили Институт экономики и управления СурГУ с 13‑м днём рождения!🎉",
+              "text": "<p>Для Альфа‑Банка участие в праздновании дня рождения уже стало традицией. В рамках торжественного вечера, помимо привычных награждений преподавателей и студентов, прошёл творческий этап конкурса «Лучший профиль ИЭиУ‑2026».</p>",
+              "images": ["img/w2/sur.png","img/w2/sur1.png","img/w2/sur2.png"]
+            },
+            {
+              "id": 17,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Областной бизнес-форума «Мой бизнес. Курганская область. День предпринимателя — 2026»",
+              "text": "<p>Форум объединил представителей малого и среднего бизнеса, органов власти и делового сообщества региона. В центре внимания — развитие предпринимательства, цифровизация и современные решения для бизнеса.</p>",
+              "images": ["img/w2/kur.png"]
+            },
+            {
+              "id": 16,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Выступили генеральным спонсором мероприятия, посвящённого развитию предпринимательской среды и поддержке бизнеса в Иркутском регионе.",
+              "text": "<p>Центральным событием стал открытый диалог с участием первого заместителя губернатора Анчугина А.А., министра экономического развития региона Цишковского В.Ю. и предпринимателей региона.</p>",
+              "images": ["img/w2/ir.png","img/w2/ir1.png"]
+            },
+            {
+              "id": 15,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Финал VII Республиканского конкурса «Лучший общественный (координационный) совет предпринимателей в муниципальных образованиях Республики Татарстан».",
+              "text": "<p>43 муниципалитета представили свои достижения в 13 номинациях — от развития промышленных парков и импортозамещения до экологической ответственности бизнеса.</p><p>Владислав Абрамов, региональный управляющий, поздравил победителя в номинации «За содействие предпринимателям в получении грантовой поддержки для реализации бизнес и социальных проектов» и вручил диплом и памятный подарок от Банка Главе Буинского муниципального района.</p>",
+              "images": ["img/w2/rt.png","img/w2/rt1.png","img/w2/rt2.png"]
+            },
+            {
+              "id": 14,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Заседание Совета по развитию малого и среднего предпринимательства в Республике Карелия🤝",
+              "text": "<p>Мероприятие приурочено к Дню российского предпринимательства. В нём приняли участие представители бизнеса, органов власти и институтов поддержки, объединив стратегическую повестку с практическим разбором кейсов. Заседание завершилось награждением лучших предпринимателей и деловой игрой, в ходе которой рассматривались современные модели поведения.</p>",
+              "images": ["img/w2/rk.png","img/w2/rk1.png","img/w2/rk2.png"]
+            },
+            {
+              "id": 13,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "В Астрахани стали партнёром финала 16‑го сезона Юниор‑лиги КВН🤩",
+              "text": "<p>Мероприятие получилось весёлым, модным, умным и свободным; в нём приняли участие 150 человек и 700 зрителей. Альфа‑агенты работали на площадке, собрали 120 контактов и оформили 8 дебетовых карт.</p>",
+              "images": ["img/w2/kvn.png","img/w2/kvn1.png","img/w2/kvn2.png"]
+            },
+            {
+              "id": 12,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Благотворительный фестиваль бесконтактного регби «Точка касания»🏉",
+              "text": "<p>В Курске парк «Солянка» превратился в столицу бизнес‑регби: здесь прошёл благотворительный фестиваль бесконтактного регби «Точка касания». В турнире приняли участие лидеры бизнеса и представители общественных организаций Курской области. За кубок боролись восемь команд, демонстрируя высочайший уровень игры и командного духа.</p>",
+              "images": ["img/w2/tk.png","img/w2/tk1.png","img/w2/tk2.png"]
+            },
+            {
+              "id": 11,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Форум «Дни Пермского бизнеса»📊",
+              "text": "<p>Более 2000 участников посетили площадку для открытого диалога между бизнес‑сообществом, органами власти и представителями государственных и общественных структур региона.</p><p>Форум объединил предпринимателей из разных сфер и стал пространством для обмена опытом, обсуждения актуальных вызовов и поиска новых точек роста.</p>",
+              "images": ["img/w2/per.png","img/w2/per1.png","img/w2/per2.png"]
+            },
+            {
+              "id": 10,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "В Тюмени прошёл бизнес‑завтрак в рамках Форума креативных предпринимателей🔥",
+              "text": "<p>Удобный формат позволил выйти из операционной рутины и получить практичные идеи по диджиталу — без лишних терминов, с реальными кейсами и понятными инструментами.</p><p>Выступали эксперты агентства «Приоритет». Агентству 18 лет, с 2013 года оно лидирует в Тюмени и входит в ТОП‑10 агентств России. Эксперты провели публичный аудит сайтов (SEO, реклама, конверсия) и дали конкретные рекомендации.</p>",
+              "images": ["img/w2/tum.png","img/w2/tum1.png","img/w2/tum2.png"]
+            },
+            {
+              "id": 8,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Укрепляем взаимодействие 🤝",
+              "text": "<p>В Краснодаре состоялась III ежегодная конференция Альфа‑Страхования, посвященная цифровизации страховых процессов.</p>",
+              "images": ["img/w2/ag.png","img/w2/ag1.png","img/w2/ag2.png"]
+            },
+            {
+              "id": 9,
+              "weekGroup": "week2",
+              "date": "29 мая 2026",
+              "title": "Бизнес‑конференция «Траектория'26»💼",
+              "text": "<p>В Тюмени прошла бизнес‑конференция «Траектория'26», где Альфа‑Банк выступил стратегическим партнёром и представил свои передовые нефинансовые сервисы — «Альфа‑Локация» и «Альфа‑Таргет».</p><p>Эти инструменты привлекли активное внимание аудитории: предприниматели отметили их практическую пользу и большой потенциал для развития бизнеса.</p>",
+              "images": ["img/w2/tr.png","img/w2/tr1.png","img/w2/tr2.png"]
+            },
+            {
+              "id": 1,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "Никого не оставили равнодушным 🐕",
+              "text": "<p>В Калининграде прошёл «Другфест»— фестиваль, где приюты привезли своих подопечных, чтобы показать, что такое домашнее тепло.</p><p>Гости могли финансово поддержать приюты, а также наслаждались лотереями, играми, квестами и выступлениями музыкальных коллективов.</p><p>Собаки провели день в любви и ласке. Кто‑то нашёл новую семью, кто‑то пришёл просто поддержать, но равнодушных в тот день не было.</p>",
+              "images": ["img/img1/df1.png","img/img1/df2.png","img/img1/df3.png"]
+            },
+            {
+              "id": 2,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "Волгоградский марафон🏃",
+              "text": "<p>В Волгограде началась серия ярких забегов, где каждый бегун может проверить свои возможности, прочувствовать дух спортивного праздника, наполниться позитивными эмоциями и оформить индивидуальную гравировку на карте Альфа‑Банка с логотипом марафона🔥</p>",
+              "images": ["img/img1/vm.png","img/img1/vm1.png","img/img1/vm2.png"]
+            },
+            {
+              "id": 3,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "Фестиваль детского футбола «Крохабол» в Новосибирске⚽️",
+              "text": "<p>Команды дошкольных учреждений региона объединились в один яркий праздник. В игре приняли участие 380 юных футболистов.</p><p>Генеральным партнёром фестиваля выступил Альфа‑Банк. В рамках мероприятия команда Альфа‑Агентов консультировала гостей по банковским продуктам, делали гравировки на картах с индивидуальным дизайном.</p><p>Поддержка детского спорта и массовых спортивных инициатив остаётся одним из ключевых направлений социальной ответственности банка.</p>",
+              "images": ["img/img1/fut.png","img/img1/fut1.png","img/img1/fut2.png"]
+            },
+            {
+              "id": 4,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "Финтех-метап в ТГУ🧑🎓",
+              "text": "<p>Молодёжный финтех‑митап, организованный Альфа‑Банком и Томским государственным университетом — это выступления практиков, живые мастер‑классы и поиск своего места в цифровой экономике.</p><p>В мероприятии приняло участие 120 человек, а открытие провёл региональный управляющий Константин Ланевский.</p>",
+              "images": ["img/img1/fm.png","img/img1/fm1.png","img/img1/fm2.png"]
+            },
+            {
+              "id": 5,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "Благодарность за вклад в развитие креативных индустрий региона🔥",
+              "text": "<p>Экспертная сессия форума креативных предпринимателей КПД «Продажи в креативных индустриях. Локальная идентичность, традиционные ценности и вызовы рынка» состоялась в Москве в офисе Альфа‑банка.</p><p>Мы получили благодарность как генеральный партнёр форума, а также личную благодарность от Тюменского агентства креативных индустрий, которое выразило признание <b>региональному управляющем — Наталье Белокопытовой и директору малого бизнеса — Евгении Козловой.</b></p>",
+              "images": ["img/img1/bl.png","img/img1/bl1.png","img/img1/bl2.png"]
+            },
+            {
+              "id": 6,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "В Казани с успехом прошла Бизнес- встреча: «ВЭД. Новые возможности развития бизнеса»📊",
+              "text": "<p>91 участник, топовые эксперты, самые последние тренды и новые возможности развития бизнеса в сфере ВЭД.</p><p>Обсудили актуальные вызовы и возможности для бизнеса в текущих реалиях. Рассмотрели банковскую поддержку в международных расчетах, логистику и экспортную деятельность.</p>",
+              "images": ["img/img1/bv.png","img/img1/bv1.png","img/img1/bv2.png"]
+            },
+            {
+              "id": 7,
+              "weekGroup": "week1",
+              "date": "22 мая 2026",
+              "title": "«Признание-2026» — наградили лучших студентов и педагогов Колледж🤩",
+              "text": "<p>На церемонии были вручены награды педагогам и студентам в трёх номинациях. Атмосфера была тёплой, красивой и по‑семейному душевной!</p><p>В мероприятии приняли участие представители Альфа‑Банка, Министерства образования и науки, а также Казанский федеральный университет.</p>",
+              "images": ["img/img1/pr.png","img/img1/pr1.png"]
+            }
+          ];
+
+          // ============================================================
+          // ⚙️ КОД
+          // ============================================================
+
+          let weekStatus = { fresh: null, archived: [] };
+          let showArchives = false;
+
+          // Состояние лайтбокса
+          let currentGallery = [];
+          let currentIndex = 0;
+
+          function getWeekNumber(w) {
+            const m = String(w).match(/week(\d+)/i);
+            return m ? parseInt(m[1], 10) : 0;
+          }
+
+          function updateWeekStatus() {
+            const weeks = [...new Set(articlesData.map((a) => a.weekGroup))];
+            if (!weeks.length) {
+              weekStatus = { fresh: null, archived: [] };
+              return;
+            }
+            const sorted = [...weeks].sort((a, b) => getWeekNumber(b) - getWeekNumber(a));
+            weekStatus = { fresh: sorted[0], archived: sorted.slice(1) };
+          }
+
+          function escapeHtml(str) {
+            if (!str) return "";
+            return String(str).replace(/[&<>"']/g, (m) => ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[m]);
+          }
+
+          function getWeekInfo(weekGroup) {
+            const arts = articlesData.filter((a) => a.weekGroup === weekGroup);
+            return {
+              title: `Выпуск #${getWeekNumber(weekGroup)}`,
+              date: arts[0]?.date || "",
+            };
+          }
+
+          function renderArticleCard(article) {
+            const images = article.images || [];
+            const safeTitle = escapeHtml(article.title || "Фото");
+            // Сохраняем JSON массива в data-атрибут для восстановления галереи
+            const galleryJson = escapeHtml(JSON.stringify(images));
+            const imagesHtml = images.length
+              ? `
+              <div class="collage">
+                <div class="collage-grid" data-count="${images.length}" data-gallery='${galleryJson}'>
+                  ${images.map((src, idx) => `<div class="collage-item" data-fullsrc="${escapeHtml(src)}" data-index="${idx}" role="button" tabindex="0" aria-label="Открыть фото: ${safeTitle}"><img src="${escapeHtml(src)}" loading="lazy" alt="${safeTitle}"></div>`).join("")}
+                </div>
+              </div>
+              <div class="photo-count-badge"><i class="fas fa-images" aria-hidden="true"></i> ${images.length}</div>
+            `
+              : "";
+
+            return `
+              <article class="card">
+                ${imagesHtml}
+                <div class="card-content">
+                  <span class="date">${escapeHtml(article.date || "")}</span>
+                  <h2>${escapeHtml(article.title || "")}</h2>
+                  ${article.text || ""}
+                </div>
+              </article>
+            `;
+          }
+
+          function renderWeeksFeed() {
+            const container = document.getElementById("mainContent");
+            const wrapper = document.getElementById("showAllBtnWrapper");
+
+            if (!articlesData.length) {
+              container.innerHTML = '<p style="text-align:center;padding:40px;color:#888;">Пока нет новостей.</p>';
+              wrapper.style.display = "none";
+              return;
+            }
+
+            let html = "";
+            const fresh = weekStatus.fresh;
+            const arch = weekStatus.archived;
+
+            if (fresh) {
+              const arts = articlesData.filter((a) => a.weekGroup === fresh);
+              if (arts.length) {
+                const info = getWeekInfo(fresh);
+                const weekId = `week-content-${fresh}`;
+                html += `
+                  <div class="week-section">
+                    <div class="week-header" role="button" tabindex="0" aria-expanded="true" aria-controls="${weekId}" data-week="${fresh}">
+                      <div class="week-header-left">
+                        <span class="week-badge">Свежий</span>
+                        <span class="week-title">${escapeHtml(info.title)}</span>
+                        <span class="week-date">${escapeHtml(info.date)}</span>
+                      </div>
+                      <div><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="week-content" id="${weekId}">
+                      ${arts.map(renderArticleCard).join("")}
+                    </div>
+                  </div>
+                `;
+              }
+            }
+
+            if (arch.length) {
+              html += `<div id="archivesTitle" class="archives-title ${showArchives ? "visible" : ""}"><i class="fas fa-history" aria-hidden="true"></i> Архивные выпуски</div>`;
+              html += `<div id="archivesSection">`;
+              arch.forEach((wid) => {
+                const arts = articlesData.filter((a) => a.weekGroup === wid);
+                if (arts.length) {
+                  const info = getWeekInfo(wid);
+                  const weekId = `week-content-${wid}`;
+                  html += `
+                    <div class="week-section archive-section ${showArchives ? "visible" : ""}">
+                      <div class="week-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="${weekId}" data-week="${wid}">
+                        <div class="week-header-left">
+                          <span class="week-badge archived">Архив</span>
+                          <span class="week-title">${escapeHtml(info.title)}</span>
+                          <span class="week-date">${escapeHtml(info.date)}</span>
+                        </div>
+                        <div><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
+                      </div>
+                      <div class="week-content collapsed" id="${weekId}">
+                        ${arts.map(renderArticleCard).join("")}
+                      </div>
+                    </div>
+                  `;
+                }
+              });
+              html += `</div>`;
+              wrapper.style.display = "block";
+            } else {
+              wrapper.style.display = "none";
+            }
+
+            container.innerHTML = html;
+          }
+
+          function toggleWeek(header) {
+            const isCollapsed = header.classList.contains("collapsed");
+            const content = header.nextElementSibling;
+
+            header.classList.toggle("collapsed");
+            content.classList.toggle("collapsed");
+            header.setAttribute("aria-expanded", isCollapsed ? "true" : "false");
+          }
+
+          // ========== ЛАЙТБОКС ==========
+          function openLightbox(gallery, index) {
+            currentGallery = gallery;
+            currentIndex = index;
+            updateLightboxImage();
+
+            const modal = document.getElementById("lightboxModal");
+            modal.classList.add("active");
+            modal.classList.toggle("single", gallery.length <= 1);
+            document.body.style.overflow = "hidden";
+            document.getElementById("mainContent").setAttribute("inert", "true");
+          }
+
+          function updateLightboxImage() {
+            const img = document.getElementById("lightboxImage");
+            const counter = document.getElementById("lightboxCounter");
+            const prevBtn = document.getElementById("lightboxPrev");
+            const nextBtn = document.getElementById("lightboxNext");
+
+            img.style.opacity = "0";
+            setTimeout(() => {
+              img.src = currentGallery[currentIndex];
+              img.style.opacity = "1";
+            }, 100);
+
+            counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === currentGallery.length - 1;
+          }
+
+          function showPrev() {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateLightboxImage();
+            }
+          }
+
+          function showNext() {
+            if (currentIndex < currentGallery.length - 1) {
+              currentIndex++;
+              updateLightboxImage();
+            }
+          }
+
+          function closeLightbox() {
+            const modal = document.getElementById("lightboxModal");
+            modal.classList.remove("active");
+            document.getElementById("lightboxImage").src = "";
+            document.body.style.overflow = "";
+            document.getElementById("mainContent").removeAttribute("inert");
+            currentGallery = [];
+            currentIndex = 0;
+          }
+
+          function initEvents() {
+            const mainContent = document.getElementById("mainContent");
+
+            mainContent.addEventListener("click", (e) => {
+              const header = e.target.closest(".week-header");
+              if (header) {
+                toggleWeek(header);
+                return;
+              }
+
+              const collageItem = e.target.closest(".collage-item");
+              if (collageItem) {
+                const grid = collageItem.closest(".collage-grid");
+                const gallery = JSON.parse(grid.dataset.gallery || "[]");
+                const index = parseInt(collageItem.dataset.index || "0", 10);
+                if (gallery.length) {
+                  openLightbox(gallery, index);
+                }
+              }
+            });
+
+            mainContent.addEventListener("keydown", (e) => {
+              const collageItem = e.target.closest(".collage-item");
+              if (collageItem && (e.key === "Enter" || e.key === " ")) {
+                e.preventDefault();
+                collageItem.click();
+              }
+
+              const header = e.target.closest(".week-header");
+              if (header && (e.key === "Enter" || e.key === " ")) {
+                e.preventDefault();
+                toggleWeek(header);
+              }
+            });
+
+            // Лайтбокс
+            const modal = document.getElementById("lightboxModal");
+            const closeBtn = document.getElementById("closeLightbox");
+            const prevBtn = document.getElementById("lightboxPrev");
+            const nextBtn = document.getElementById("lightboxNext");
+
+            closeBtn.onclick = closeLightbox;
+            prevBtn.onclick = showPrev;
+            nextBtn.onclick = showNext;
+
+            modal.addEventListener("click", (e) => {
+              if (e.target === modal) closeLightbox();
+            });
+
+            document.addEventListener("keydown", (e) => {
+              if (!modal.classList.contains("active")) return;
+              if (e.key === "Escape") {
+                closeLightbox();
+              } else if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                showPrev();
+              } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                showNext();
+              }
+            });
+
+            // Свайпы на мобильных
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            modal.addEventListener("touchstart", (e) => {
+              touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            modal.addEventListener("touchend", (e) => {
+              touchEndX = e.changedTouches[0].screenX;
+              const diff = touchStartX - touchEndX;
+              if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                  showNext();
+                } else {
+                  showPrev();
+                }
+              }
+            }, { passive: true });
+
+            // Кнопка "Все выпуски"
+            document.getElementById("expandAllBtn").onclick = function() {
+              showArchives = !showArchives;
+              this.setAttribute("aria-expanded", showArchives);
+
+              document.querySelectorAll(".week-section.archive-section").forEach((s) => {
+                s.classList.toggle("visible", showArchives);
+              });
+
+              const title = document.getElementById("archivesTitle");
+              if (title) title.classList.toggle("visible", showArchives);
+
+              const btnSpan = this.querySelector("span");
+              btnSpan.innerHTML = showArchives
+                ? '<i class="fas fa-compress-alt" aria-hidden="true"></i> Скрыть выпуски'
+                : '<i class="fas fa-archive" aria-hidden="true"></i> Все выпуски';
+            };
+          }
+
+          // Запуск
+          document.addEventListener("DOMContentLoaded", () => {
+            updateWeekStatus();
+            renderWeeksFeed();
+            initEvents();
+          });
+    </script>
+  </body>
 </html>
