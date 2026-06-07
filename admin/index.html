@@ -6,10 +6,11 @@
   <title>Админка | А-СЕТЬ</title>
   <!-- Виджет авторизации Netlify -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Сам Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <!-- Скрипт CMS должен быть В КОНЦЕ body, а не в head -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
